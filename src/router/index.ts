@@ -10,6 +10,7 @@ import XCommand from '../views/XCommand.vue'
 import OntDiag from '../views/OntDiag.vue'
 import Topo from '../views/Topo.vue'
 import AssetsManagement from '../views/AssetsManagement.vue'
+import Login from '../views/Login.vue'
 
 import { component } from 'vue/types/umd'
 
@@ -79,6 +80,13 @@ const routes: Array<RouteConfig> = [
     name: 'AssetsManagement',
     component: AssetsManagement
   },
+
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+
   {
     path: '/about',
     name: 'About',
