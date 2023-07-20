@@ -22,6 +22,7 @@
        <el-menu-item index="7" @click="loadXCommand">XCommand</el-menu-item>
        <el-menu-item index="8" @click="loadOntDiag">OntDiag</el-menu-item>
       <el-menu-item index="8" @click="loadTopo">Topo</el-menu-item>
+      <el-menu-item index="9" @click="loadAssetsManagement">AssetsManagement</el-menu-item>
     </el-menu>
   </el-aside>
     <el-main>
@@ -110,6 +111,12 @@ export default class extends Vue {
 
   private loadTopo() {
     this.$router.push({ path: '/topo' }).catch(err => {
+      console.warn(err)
+    })
+  }
+
+  private loadAssetsManagement() {
+    this.$router.push({ path: '/assetsmanagement' }).catch(err => {
       console.warn(err)
     })
   }

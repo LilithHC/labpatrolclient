@@ -7,8 +7,9 @@ import E7Ont from '../views/E7Ont.vue'
 import AxosModule from '../views/AxosModule.vue'
 import ExaModule from '../views/ExaModule.vue'
 import XCommand from '../views/XCommand.vue'
-import OntDiag from "../views/OntDiag.vue"
-import Topo from "../views/Topo.vue"
+import OntDiag from '../views/OntDiag.vue'
+import Topo from '../views/Topo.vue'
+import AssetsManagement from '../views/AssetsManagement.vue'
 
 import { component } from 'vue/types/umd'
 
@@ -62,16 +63,22 @@ const routes: Array<RouteConfig> = [
   },
 
   {
-    path:'/ontdiag',
-    name:'OntDiag',
+    path: '/ontdiag',
+    name: 'OntDiag',
     component: OntDiag
   },
 
   {
-    path:'/topo',
-    name:'topo',
+    path: '/topo',
+    name: 'topo',
     component: Topo
-  },  
+  },
+
+  {
+    path: '/assetsmanagement',
+    name: 'AssetsManagement',
+    component: AssetsManagement
+  },
   {
     path: '/about',
     name: 'About',

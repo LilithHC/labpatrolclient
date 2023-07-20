@@ -41,7 +41,7 @@ export const getAxosModule = (params: any) =>
     params
   })
 
-  export const getAxosCardIp = (params: any) =>
+export const getAxosCardIp = (params: any) =>
   request({
     url: '/axoscardip',
     method: 'get',
@@ -81,11 +81,19 @@ export const getAxosModuleIp = (params: any) =>
     url: '/axosmoduleip',
     method: 'get',
     params
-  })  
+  })
 
-  export const getAxosTopo = (params: any) =>
+export const getAxosTopo = (params: any) =>
   request({
     url: '/axostopo',
     method: 'get',
     params
-  })    
+  })
+
+// remains to be added
+// export const getAssetsManagement = (params: any) =>
+// request({
+//   url: '/assetsmanagement',
+//   method: 'get',
+//   params
+// })
