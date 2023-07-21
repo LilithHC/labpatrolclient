@@ -11,14 +11,15 @@
         ><el-button @click="exportText">exportTxt</el-button></el-col>
       <el-col :span="1"
         ><el-link v-on:click="fetchData(currentPage - 1)"
-          >Prev</el-link
+          ><i class="el-icon-arrow-left"></i>Prev</el-link
         ></el-col
       >
       <el-col :span="1"
-        ><el-link v-on:click="fetchData(currentPage + 1)"
-          >Next</el-link
+        ><el-link v-on:click="fetchData(currentPage + 1)" 
+          >Next<i class="el-icon-arrow-right"></i></el-link 
         ></el-col
       >
+
       <el-col :span="2"
         ><label name='pageinfo'>{{ currentPage }}/{{ totalPageCount }} </label></el-col
       >
@@ -29,7 +30,7 @@
         </el-input>
       </el-col>
         <el-col :span="2"
-          ><el-button @click="fetchData(1)">search</el-button>
+          ><el-button icon="el-icon-search" @click="fetchData(1)">search</el-button>
       </el-col>
       <el-col :span="2"
           ><el-button @click="batchCmd()">XCommand</el-button>
