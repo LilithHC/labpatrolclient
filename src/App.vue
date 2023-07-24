@@ -1,27 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
-    </div>
-    <div>
-    </div>
-  <el-container style="border: 1px solid #eee">
+  <div id="nav">
+  </div>
+  <div>
+  </div>
+
+  <el-container style="border: 1px solid #eee" v-if="$route.meta.keepAlive" >
       <el-header class="el-headerx" style="height:30px">
     <el-button @click="collapseStatus" size="mini" >
         <i :class='isCollapse?"el-icon-d-arrow-right":"el-icon-d-arrow-left"'></i>
      </el-button>
         </el-header>
-   <el-container>
-  <el-aside width="200px" style="background-color: rgb(238, 241, 246)" :hidden='isCollapse'>
+  <el-container>
+  <el-aside width="200px" style="background-color: rgb(238, 241, 246)" v-if="$route.meta.keepAlive" :hidden='isCollapse'>
     <el-menu >
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-user"></i>
           <span>权限管理</span>
         </template>
-          <el-menu-item index="1-1" @click="loadUsers">UserList</el-menu-item>
-          <el-menu-item index="1-2" @click="addUser">AddUser</el-menu-item>
+          <el-menu-item index="1-1" @click="loadUserInfo">UserInfo</el-menu-item>
+          <el-menu-item index="1-2" @click="loadAddUser">AddUser</el-menu-item>
       </el-submenu>
-        <el-submenu index="2">
+      <el-submenu index="2">
         <template slot="title">
           <i class="el-icon-info"></i>
           <span>运行状态</span>
@@ -38,21 +39,23 @@
           <i class="el-icon-setting"></i>
           <span>资产管理</span>
         </template>
-          <el-menu-item index="3-1" @click="loadAssets">DevicesList</el-menu-item>
-          <el-menu-item index="3-2" @click="addDevice">AddDevice</el-menu-item>
-          <el-menu-item index="3-3" @click="useRecords">UseRecords</el-menu-item>
+          <el-menu-item index="3-1" @click="loadDevicesInfo">DevicesInfo</el-menu-item>
+          <el-menu-item index="3-2" @click="loadAddDevice">AddDevice</el-menu-item>
+          <el-menu-item index="3-3" @click="loadUseRecords">UseRecords</el-menu-item>
       </el-submenu>
       <el-menu-item index="4" @click="loadXCommand">XCommand</el-menu-item>
       <el-menu-item index="5" @click="loadOntDiag">OntDiag</el-menu-item>
       <el-menu-item index="6" @click="loadTopo">Topo</el-menu-item>
+      <el-menu-item index="6" @click="loadNotify">Notify</el-menu-item>
     </el-menu>
   </el-aside>
-    <el-main>
+
+  <el-main>
 
       <router-view/>
-    </el-main>
-    </el-container>
+  </el-main>
 </el-container>
+  </el-container>
 
   </div>
 
@@ -137,8 +140,38 @@ export default class extends Vue {
     })
   }
 
-  private loadAssets() {
-    this.$router.push({ path: '/assetsmanagement' }).catch(err => {
+  private loadDevicesInfo() {
+    this.$router.push({ path: '/devicesinfo' }).catch(err => {
+      console.warn(err)
+    })
+  }
+
+  private loadAddDevice() {
+    this.$router.push({ path: '/adddevice' }).catch(err => {
+      console.warn(err)
+    })
+  }
+
+  private loadUseRecords() {
+    this.$router.push({ path: '/userecords' }).catch(err => {
+      console.warn(err)
+    })
+  }
+
+  private loadUserInfo() {
+    this.$router.push({ path: '/userinfo' }).catch(err => {
+      console.warn(err)
+    })
+  }
+
+  private loadAddUser() {
+    this.$router.push({ path: '/adduser' }).catch(err => {
+      console.warn(err)
+    })
+  }
+
+  private loadNotify() {
+    this.$router.push({ path: '/notify' }).catch(err => {
       console.warn(err)
     })
   }

@@ -91,9 +91,9 @@ export const getAxosTopo = (params: any) =>
   })
 
 // remains to be added
-// export const getAssetsManagement = (params: any) =>
+// export const getTodayIps= (params: any) =>
 // request({
-//   url: '/assetsmanagement',
+//   url: '/todayips',
 //   method: 'get',
 //   params
 // })
