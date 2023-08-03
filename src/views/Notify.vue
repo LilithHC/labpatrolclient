@@ -168,6 +168,44 @@ export default class Notify extends Vue {
       }
     }
 
+    private async sendEmail() {
+      let data
+      let pageNum = 1
+      let needPage = 0
+      const DataList = []
+      while (true) {
+        data = (
+          await getAxosCard({ pageNum: pageNum, eachFetch: this.oneShowCount })
+        ).data
+
+        if (data && data.code === 200) {
+          if (data.message) {
+            needPage =
+            Math.floor(data.message.totalCount / this.oneShowCount) + 1
+            pageNum++
+
+            for (let ii = 0; ii < data.message.res.length; ii++) {
+              const dataItem = []
+              for (const key in data.message.res[ii]) {
+                dataItem.push(data.message.res[ii][key])
+              }
+              DataList.push(dataItem)
+            }
+
+            if (pageNum > needPage) {
+              break
+            }
+          } else {
+            break
+          }
+        } else {
+          break
+        }
+      }
+
+      console.log(DataList.length)
+    }
+
     private async exportCsv() {
     // const tableData = [['1'], '2', '3']
     // const header = ['坐标lng', '坐标lat', '地址']

@@ -17,7 +17,7 @@
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-user"></i>
-          <span>权限管理</span>
+          <span>Permission</span>
         </template>
           <el-menu-item index="1-1" @click="loadUserInfo">UserInfo</el-menu-item>
           <el-menu-item index="1-2" @click="loadAddUser">AddUser</el-menu-item>
@@ -25,7 +25,7 @@
       <el-submenu index="2">
         <template slot="title">
           <i class="el-icon-info"></i>
-          <span>运行状态</span>
+          <span>Runtime</span>
         </template>
       <el-menu-item index="2-1" @click="loadAxos">AxosCard</el-menu-item>
       <el-menu-item index="2-2" @click="loadExa">ExaCard</el-menu-item>
@@ -37,7 +37,7 @@
       <el-submenu index="3">
         <template slot="title">
           <i class="el-icon-setting"></i>
-          <span>资产管理</span>
+          <span>Assets</span>
         </template>
           <el-menu-item index="3-1" @click="loadDevicesInfo">DevicesInfo</el-menu-item>
           <el-menu-item index="3-2" @click="loadAddDevice">AddDevice</el-menu-item>
