@@ -43,6 +43,18 @@
           <el-menu-item index="3-2" @click="loadAddDevice">AddDevice</el-menu-item>
           <el-menu-item index="3-3" @click="loadUseRecords">UseRecords</el-menu-item>
       </el-submenu>
+      <el-submenu index="4">
+        <template slot="title">
+          <i class="el-icon-info"></i>
+          <span>Notify</span>
+        </template>
+      <el-menu-item index="4-1" @click="loadNotifyAxos">AxosCard</el-menu-item>
+      <el-menu-item index="4-2" @click="loadNotifyExa">ExaCard</el-menu-item>
+      <el-menu-item index="4-3" @click="loadNotifyAxosOnt">AxosOnt</el-menu-item>
+      <el-menu-item index="4-4" @click="loadNotifyExaOnt">ExaOnt</el-menu-item>
+      <el-menu-item index="4-5" @click="loadNotifyAxosModule">AxosModule</el-menu-item>
+      <el-menu-item index="4-6" @click="loadNotifyExaModule">ExaModule</el-menu-item>
+      </el-submenu>
       <el-menu-item index="4" @click="loadXCommand">XCommand</el-menu-item>
       <el-menu-item index="5" @click="loadOntDiag">OntDiag</el-menu-item>
       <el-menu-item index="6" @click="loadTopo">Topo</el-menu-item>
@@ -172,6 +184,42 @@ export default class extends Vue {
 
   private loadNotify() {
     this.$router.push({ path: '/notify' }).catch(err => {
+      console.warn(err)
+    })
+  }
+
+  private loadNotifyAxos() {
+    this.$router.push({ path: '/notifyaxoscard' }).catch(err => {
+      console.warn(err)
+    })
+  }
+
+  private loadNotifyExa() {
+    this.$router.push({ path: '/notifyexacard' }).catch(err => {
+      console.warn(err)
+    })
+  }
+
+  private loadNotifyAxosOnt() {
+    this.$router.push({ path: '/notifyaxosont' }).catch(err => {
+      console.warn(err)
+    })
+  }
+
+  private loadNotifyExaOnt() {
+    this.$router.push({ path: '/notifyexaont' }).catch(err => {
+      console.warn(err)
+    })
+  }
+
+  private loadNotifyExaModule() {
+    this.$router.push({ path: '/notifyexamodule' }).catch(err => {
+      console.warn(err)
+    })
+  }
+
+  private loadNotifyAxosModule() {
+    this.$router.push({ path: '/notifyaxosmodule' }).catch(err => {
       console.warn(err)
     })
   }

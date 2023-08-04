@@ -55,8 +55,8 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import {
-  getAxosCard,
-  getAxosCardIp
+  getAxosOnt,
+  getAxosOntIp
 } from '@/api/DataFetch'
 // @ts-ignore
 import CsvExportor from 'csv-exportor'
@@ -72,10 +72,10 @@ interface ShowFilter {
 }
 
 @Component({
-  name: 'Notify'
+  name: 'NotifyAxosOnt'
 })
 
-export default class Notify extends Vue {
+export default class NotifyAxosOnt extends Vue {
   private headers: string[] = [];
   private filter: ShowFilter = {
     axoscard: ['cardPosition', 'MODEL', 'SERIAL NO', 'timestamp', 'details'],
@@ -112,7 +112,7 @@ export default class Notify extends Vue {
 
     private async getDataIps(filter = ''):Promise<oneCardInfo[]> {
       const data = (
-        await getAxosCardIp({ filter: filter })
+        await getAxosOntIp({ filter: filter })
       ).data
 
       if (data && data.code === 200) {
@@ -129,7 +129,7 @@ export default class Notify extends Vue {
 
     private async getDataResult(pageNum: number, filter = ''):Promise<oneCardInfo[]> {
       const data = (
-        await getAxosCard({ pageNum: pageNum, eachFetch: this.oneShowCount, filter: filter })
+        await getAxosOnt({ pageNum: pageNum, eachFetch: this.oneShowCount, filter: filter })
       ).data
 
       if (data && data.code === 200) {
@@ -182,7 +182,7 @@ export default class Notify extends Vue {
       try {
         while (true) {
           data = (
-            await getAxosCard({ pageNum: pageNum, eachFetch: this.oneShowCount })
+            await getAxosOnt({ pageNum: pageNum, eachFetch: this.oneShowCount })
           ).data
 
           console.log('fetch page ' + pageNum)
@@ -229,7 +229,7 @@ export default class Notify extends Vue {
       }
 
       if (csvData.length > 0) {
-        CsvExportor.downloadCsv(csvData, { header }, 'Notify.csv')
+        CsvExportor.downloadCsv(csvData, { header }, 'NotifyAxosOnt.csv')
         this.$message({
           showClose: true,
           message: 'export success',
@@ -252,7 +252,7 @@ export default class Notify extends Vue {
       this.dialogVisible = true
       while (true) {
         data = (
-          await getAxosCard({ pageNum: pageNum, eachFetch: this.oneShowCount })
+          await getAxosOnt({ pageNum: pageNum, eachFetch: this.oneShowCount })
         ).data
 
         if (data && data.code === 200) {
@@ -290,7 +290,7 @@ export default class Notify extends Vue {
         }
       }
       if (csvData.length > 0) {
-        this.downloadText(csvData, header, 'Notify.txt')
+        this.downloadText(csvData, header, 'NotifyAxosOnt.txt')
       }
       this.dialogVisible = false
     }

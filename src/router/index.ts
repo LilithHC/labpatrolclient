@@ -18,6 +18,13 @@ import DevicesInfo from '../views/assets/DevicesInfo.vue'
 import AddDevice from '../views/assets/AddDevice.vue'
 import UseRecords from '../views/assets/UseRecords.vue'
 
+import NotifyAxosCard from '../views/notify/NotifyAxosCard.vue'
+import NotifyAxosModule from '../views/notify/NotifyAxosModule.vue'
+import NotifyAxosOnt from '../views/notify/NotifyAxosOnt.vue'
+import NotifyExaCard from '../views/notify/NotifyExaCard.vue'
+import NotifyExaOnt from '../views/notify/NotifyExaOnt.vue'
+import NotifyExaModule from '../views/notify/NotifyExaModule.vue'
+
 import { component } from 'vue/types/umd'
 
 Vue.use(VueRouter)
@@ -178,6 +185,60 @@ const routes: Array<RouteConfig> = [
     path: '/Notify',
     name: 'notify',
     component: Notify,
+    meta: {
+      keepAlive: true// 导航栏在该页面显示
+    }
+  },
+
+  {
+    path: '/NotifyAxosCard',
+    name: 'notifyaxoscard',
+    component: NotifyAxosCard,
+    meta: {
+      keepAlive: true// 导航栏在该页面显示
+    }
+  },
+
+  {
+    path: '/NotifyAxosModule',
+    name: 'notifyaxosmodule',
+    component: NotifyAxosModule,
+    meta: {
+      keepAlive: true// 导航栏在该页面显示
+    }
+  },
+
+  {
+    path: '/NotifyAxosOnt',
+    name: 'notifyaxosont',
+    component: NotifyAxosOnt,
+    meta: {
+      keepAlive: true// 导航栏在该页面显示
+    }
+  },
+
+  {
+    path: '/NotifyExaOnt',
+    name: 'notifyexaont',
+    component: NotifyExaOnt,
+    meta: {
+      keepAlive: true// 导航栏在该页面显示
+    }
+  },
+
+  {
+    path: '/NotifyExaCard',
+    name: 'notifyexacard',
+    component: NotifyExaCard,
+    meta: {
+      keepAlive: true// 导航栏在该页面显示
+    }
+  },
+
+  {
+    path: '/NotifyExaModule',
+    name: 'notifyexamodule',
+    component: NotifyExaCard,
     meta: {
       keepAlive: true// 导航栏在该页面显示
     }

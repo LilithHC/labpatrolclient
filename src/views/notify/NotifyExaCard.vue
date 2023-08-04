@@ -72,10 +72,10 @@ interface ShowFilter {
 }
 
 @Component({
-  name: 'Notify'
+  name: 'NotifyExaCard'
 })
 
-export default class Notify extends Vue {
+export default class NotifyExaCard extends Vue {
   private headers: string[] = [];
   private filter: ShowFilter = {
     axoscard: ['cardPosition', 'MODEL', 'SERIAL NO', 'timestamp', 'details'],
