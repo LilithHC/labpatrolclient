@@ -6,6 +6,13 @@ export const getAxosCard = (params: any) =>
     params
   })
 
+export const getOffAxosCard = (params: any) =>
+  request({
+    url: '/offaxoscard',
+    method: 'get',
+    params
+  })
+
 export const getExaCard = (params: any) =>
   request({
     url: '/exacard',

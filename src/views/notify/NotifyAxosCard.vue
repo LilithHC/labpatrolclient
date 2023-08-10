@@ -55,7 +55,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import {
-  getAxosCard,
+  getOffAxosCard,
   getAxosCardIp
 } from '@/api/DataFetch'
 // @ts-ignore
@@ -129,7 +129,7 @@ export default class NotifyAxosCard extends Vue {
 
     private async getDataResult(pageNum: number, filter = ''):Promise<oneCardInfo[]> {
       const data = (
-        await getAxosCard({ pageNum: pageNum, eachFetch: this.oneShowCount, filter: filter })
+        await getOffAxosCard({ pageNum: pageNum, eachFetch: this.oneShowCount, filter: filter })
       ).data
 
       if (data && data.code === 200) {
@@ -182,7 +182,7 @@ export default class NotifyAxosCard extends Vue {
       try {
         while (true) {
           data = (
-            await getAxosCard({ pageNum: pageNum, eachFetch: this.oneShowCount })
+            await getOffAxosCard({ pageNum: pageNum, eachFetch: this.oneShowCount })
           ).data
 
           console.log('fetch page ' + pageNum)
@@ -252,7 +252,7 @@ export default class NotifyAxosCard extends Vue {
       this.dialogVisible = true
       while (true) {
         data = (
-          await getAxosCard({ pageNum: pageNum, eachFetch: this.oneShowCount })
+          await getOffAxosCard({ pageNum: pageNum, eachFetch: this.oneShowCount })
         ).data
 
         if (data && data.code === 200) {
@@ -290,7 +290,7 @@ export default class NotifyAxosCard extends Vue {
         }
       }
       if (csvData.length > 0) {
-        this.downloadText(csvData, header, 'Notify.txt')
+        this.downloadText(csvData, header, 'OfflineAxosCard.txt')
       }
       this.dialogVisible = false
     }
